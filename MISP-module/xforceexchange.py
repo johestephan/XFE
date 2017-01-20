@@ -71,14 +71,14 @@ def handler(q=False):
 	return r
 	
 def apicall(indicator_type, indicator, key=False):
-	#try:
+	try:
 		myURL = BASEurl + (extensions[str(indicator_type)])%indicator
 		request = urllib2.Request(myURL, None, MyHeader(key))
 		data = urllib2.urlopen(request)
 		jsondata = json.loads(data.read())
-	#except:
-		#return None
-		return jsondata
+	except:
+		return None
+	return jsondata
 
 def introspection():
     return mispattributes

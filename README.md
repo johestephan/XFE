@@ -4,7 +4,8 @@ https://exchange.xforce.ibmcloud.com/new
 
 ## python
 
-```In [8]: print(xfexchange.info())
+```
+In [8]: print(xfexchange.info())
 
 Copyright 2016,2017 - Joerg Stephan (@johest)
 X-Force Exchange Python module
@@ -27,7 +28,8 @@ Indicator Type: (%s = Object)
 
 ## golang
 
-```$ go run xforceexcchange.go 
+```
+$ go run xforceexcchange.go 
 Copyright 2016,2017 - Joerg Stephan (@johest)
 XforceExchange script needs at least 3 arguments
 	Indicator Type - see below

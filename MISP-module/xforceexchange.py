@@ -1,9 +1,7 @@
-#!/usr/bin/python
-
-import urllib2
+import requests
 import json
-
 import sys
+
 BASEurl = "https://api.xforce.ibmcloud.com/"
 
 extensions = {"ip1": "ipr/%s",
@@ -73,17 +71,15 @@ def handler(q=False):
 def apicall(indicator_type, indicator, key=False):
 	try:
 		myURL = BASEurl + (extensions[str(indicator_type)])%indicator
-		request = urllib2.Request(myURL, None, MyHeader(key))
-		data = urllib2.urlopen(request)
-		jsondata = json.loads(data.read())
+		jsondata = requests.get(myURL, headers=MyHeader(key)).json()
 	except:
 		return None
 	return jsondata
 
 def introspection():
-    return mispattributes
+	return mispattributes
 
 
 def version():
-    moduleinfo['config'] = moduleconfig
-    return moduleinfo
+	moduleinfo['config'] = moduleconfig
+	return moduleinfo
